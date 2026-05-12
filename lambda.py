@@ -49,7 +49,7 @@ def run_pipeline():
 
         print("Total Articles:", len(articles))
 
-        # ✅ Store raw data in S3 (with timestamp)
+        #  Store raw data in S3 (with timestamp)
         key = f"news/raw_news_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
 
         s3.put_object(
@@ -88,13 +88,14 @@ def run_pipeline():
     finally:
         cur.close()
         conn.close()
-        print("✅ Connection closed safely")
+        print("Connection closed safely")
 
 
-# 🔥 Lambda entry point
+# Lambda entry point
 def lambda_handler(event, context):
     run_pipeline()
     return {
         "statusCode": 200,
         "body": json.dumps("Pipeline executed successfully!")
     }
+      
