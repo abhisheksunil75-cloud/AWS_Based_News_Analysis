@@ -1,0 +1,11 @@
+Authenticate Docker client to your AWS ECR registry:
+    aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin (AWS ID).dkr.ecr.ap-south-1.amazonaws.com
+
+Build Docker image:
+    docker build -t news-dashboard .
+
+Tag local image with your ECR repository URI:
+    docker tag news-dashboard:latest (AWS ID).dkr.ecr.ap-south-1.amazonaws.com/news-dashboard:latest
+
+Push the image up to AWS ECR:
+    docker push (AWS ID).dkr.ecr.ap-south-1.amazonaws.com/news-dashboard:latest
