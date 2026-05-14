@@ -1,0 +1,8 @@
+Create the required folder:
+    mkdir python
+Download the Linux-compatible libraries:
+    pip install --platform manylinux2014_x86_64 --target ./python --implementation cp --python-version 3.12 --only-binary=:all:<PACKAGES>requests
+Zip the folder:
+    tar.exe -a -c -f my_lambda_layer.zip python
+Transfer S3 bucket:
+    aws s3 cp my_lambda_layer.zip s3://YOUR-BUCKET-NAME/my_lambda_layer.zip
