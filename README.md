@@ -2,7 +2,7 @@
 
 An end-to-end, serverless data pipeline and interactive web dashboard built entirely on AWS. This project automates the ingestion of live news data, performs real-time sentiment analysis, and serves the insights through a containerized web application.
 
-## 🏗️ Cloud Architecture
+## Cloud Architecture
 
 The system is broken down into two decoupled microservices: a backend data-fetching pipeline and a frontend presentation layer.
 
@@ -14,14 +14,14 @@ The system is broken down into two decoupled microservices: a backend data-fetch
 * **Containerization:** The frontend application is packaged using Docker and stored in **Amazon ECR**.
 * **Compute (Frontend):** **Amazon ECS (AWS Fargate)** hosts the Streamlit web server continuously, exposing the dashboard to the public internet on port 8051.
 
-## 🛠️ Technology Stack
+## Technology Stack
 * **Cloud:** AWS (EventBridge, Lambda, S3, RDS, ECR, ECS Fargate)
 * **Language:** Python 3.12
 * **Database:** MySQL
 * **Frontend:** Streamlit
 * **Containerization:** Docker
 
-## 🚀 Deployment Notes
+## Deployment Notes
 The frontend dashboard is designed to run statelessly on AWS Fargate. To deploy locally for testing:
 
 1. Clone the repository.
